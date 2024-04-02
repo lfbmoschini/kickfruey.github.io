@@ -9,8 +9,17 @@
     <script>
         // Função para redirecionar automaticamente ao carregar a página
         function redirectToLink() {
-            // Substitua "kickfury://mylink" pelo link desejado
+            // Obter os parâmetros da URL
+            var urlParams = new URLSearchParams(window.location.search);
+            
+            // Construir o link de redirecionamento
             var link = "kickfury://mylink";
+            
+            // Adicionar os parâmetros da URL ao link de redirecionamento
+            if (urlParams.toString() !== '') {
+                link += '?' + urlParams.toString();
+            }
+            
             // Redirecionamento automático
             window.location.href = link;
         }
@@ -20,3 +29,4 @@
     </script>
 </body>
 </html>
+
